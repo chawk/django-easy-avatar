@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: django-easy-avatar
+Version: 0.1
+Summary: A super easy AJAX loading avatar for profile management.
+Home-page: http://www.noobmovies.com/
+Author: Chris Hawkes
+Author-email: noobniche@gmail.com
+License: MIT License
+Description: django-easy-avatar
+        ==================
+        
+        A super easy AJAX loading avatar for profile management.
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
