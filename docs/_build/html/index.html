@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to django-easy-avatar’s documentation! &mdash; django-easy-avatar 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="django-easy-avatar 0.1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">django-easy-avatar 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-django-easy-avatar-s-documentation">
+<h1>Welcome to django-easy-avatar&#8217;s documentation!<a class="headerlink" href="#welcome-to-django-easy-avatar-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>A super easy AJAX loading avatar for profile management. <strong>django-easy-avatar</strong> is currently being used in production by Noob Media LLC for <a class="reference external" href="http://www.noobmovies.com">http://www.noobmovies.com</a></p>
+<p><strong>django-easy-avatar</strong> needs jQuery for ajax file uploading and validation. this plugin also uses Pillow for image manipulation and management.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Install <strong>django-easy-avatar</strong> by running:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">easy_install</span> <span class="pre">django-easy-avatar</span></tt></div></blockquote>
+<p>Add to your installed apps within django settings.py file:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">&quot;easy_install&quot;</span></tt></div></blockquote>
+<p>In that same settings.py file add:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">FILE_SAVE_PATH</span> <span class="pre">=</span> <span class="pre">'/path/to/your/project/avatars'</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">FILE_URL_PATH</span> <span class="pre">=</span> <span class="pre">'http://your_website.com/location/to/avatars/'</span></tt></p>
+</div></blockquote>
+<p>run syncdb command:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">syncdb</span></tt></div></blockquote>
+<p>important note!!, this must be added to your settings.py file:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">TEMPLATE_CONTEXT_PROCESSORS</span> <span class="pre">=</span> <span class="pre">(</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">'django.contrib.auth.context_processors.auth',</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">'django.core.context_processors.debug',</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">'django.core.context_processors.i18n',</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">'django.core.context_processors.request',</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">'django.core.context_processors.static',</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">'django.contrib.messages.context_processors.messages',</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">)</span></tt></p>
+</div></blockquote>
+<p>By default, <strong>django-easy-avatar</strong> will overwrite the previous profile image for a particular user to save server hard disk space. If you wish to keep the image you can disable this feature by adding this to your settings.py file.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">OVERWRITE_PREVIOUS_FILES</span> <span class="pre">=</span> <span class="pre">False</span></tt></div></blockquote>
+</div>
+<div class="section" id="adding-django-easy-avatar-to-your-templates">
+<h2>Adding <strong>django-easy-avatar</strong> to your templates<a class="headerlink" href="#adding-django-easy-avatar-to-your-templates" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you have included the <strong>jQuery</strong> library in your template by adding this to your html &lt;head&gt;:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;&gt;&lt;/script&gt;</span></tt></div></blockquote>
+<p>To add <strong>django-easy-avatar</strong> you simply have to add this to the top of your template:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">load</span> <span class="pre">avatar_tags</span> <span class="pre">%}</span></tt></div></blockquote>
+<p>Then, whereever you want the avatar image/form to appear you just add:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">upload_form</span> <span class="pre">%}</span></tt></div></blockquote>
+<p>That&#8217;s it!</p>
+</div>
+<div class="section" id="video-tutorials">
+<h2>Video Tutorials<a class="headerlink" href="#video-tutorials" title="Permalink to this headline">¶</a></h2>
+<p>To see <strong>django-easy-avatar</strong> in action you can visit <a class="reference external" href="http://www.noobmovies.com">http://www.noobmovies.com</a> and register your profile or you can watch a video tutorial located at <a class="reference external" href="http://www.youtube.com/watch?v=y1ndWIdK9WI">http://www.youtube.com/watch?v=y1ndWIdK9WI</a></p>
+<p>Additional tutorials will be coming soon regarding how you can style your form elements (for those who are not as familiar with CSS and JavaScript).</p>
+</div>
+<div class="section" id="things-to-consider">
+<h2>Things to Consider<a class="headerlink" href="#things-to-consider" title="Permalink to this headline">¶</a></h2>
+<p><strong>django-easy-avatar</strong> is geared towards more modern browsers.  Because it uses HTML5 and AJAX for file uploading, it may not work in older browsers such as Internet Explorer 9 and below.</p>
+</div>
+<div class="section" id="contribute">
+<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Issue Tracker: <a class="reference external" href="https://github.com/chawk/django-easy-avatar/issues">https://github.com/chawk/django-easy-avatar/issues</a></li>
+<li>Source Code: This plugin is free to be adapted at GitHub; <a class="reference external" href="https://github.com/chawk/django-easy-avatar">https://github.com/chawk/django-easy-avatar</a></li>
+</ul>
+</div>
+<div class="section" id="support">
+<h2>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h2>
+<p><strong>django-easy-avatar</strong> was created by Chris Hawkes who is a web developer and programmer in Python, C# and JavaScript.  You can contact Chris Hawkes via github with questions or concerns.  <a class="reference external" href="https://github.com/chawk">https://github.com/chawk</a></p>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>django-easy-avatar is free for commercial and non-commercial use under an MIT License.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to django-easy-avatar&#8217;s documentation!</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#adding-django-easy-avatar-to-your-templates">Adding <strong>django-easy-avatar</strong> to your templates</a></li>
+<li><a class="reference internal" href="#video-tutorials">Video Tutorials</a></li>
+<li><a class="reference internal" href="#things-to-consider">Things to Consider</a></li>
+<li><a class="reference internal" href="#contribute">Contribute</a></li>
+<li><a class="reference internal" href="#support">Support</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">django-easy-avatar 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Chris Hawkes.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+  </body>
+</html>
