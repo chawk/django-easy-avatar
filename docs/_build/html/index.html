@@ -75,6 +75,9 @@
 <p>By default, <strong>django-easy-avatar</strong> will overwrite the previous profile image for a particular user to save server hard disk space. If you wish to keep the image you can disable this feature by adding this to your settings.py file.</p>
 <blockquote>
 <div><tt class="docutils literal"><span class="pre">OVERWRITE_PREVIOUS_FILES</span> <span class="pre">=</span> <span class="pre">False</span></tt></div></blockquote>
+<p>Add this line to your projects urls.py file.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">(r'^avatar/',</span> <span class="pre">include('easy_avatar.urls')),</span></tt></div></blockquote>
 </div>
 <div class="section" id="adding-django-easy-avatar-to-your-templates">
 <h2>Adding <strong>django-easy-avatar</strong> to your templates<a class="headerlink" href="#adding-django-easy-avatar-to-your-templates" title="Permalink to this headline">¶</a></h2>

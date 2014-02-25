@@ -52,6 +52,10 @@ By default, **django-easy-avatar** will overwrite the previous profile image for
 
 	``OVERWRITE_PREVIOUS_FILES = False``
 
+Add this line to your projects urls.py file. 
+
+	``(r'^avatar/', include('easy_avatar.urls')),``
+
 Adding **django-easy-avatar** to your templates
 -------------------------------------------
 
