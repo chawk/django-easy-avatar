@@ -54,3 +54,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 {% endif %}
 
 If you have any troubles with this setup you will most likely be running into a permissions problem when your app tries to write the file to the directory.  
+
+see this link for setting permissions to allow apache to create directories and files. 
+
+http://askubuntu.com/questions/30629/how-can-i-recursively-change-the-permissions-of-files-and-directories
+
