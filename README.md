@@ -6,7 +6,7 @@ A super easy AJAX loading avatar for profile management.  django-easy-avatar is 
 Example...
 http://www.findgamersonline.com/user/profile/1/
 
-django-easy-avatar needs jQuery for ajax file uploading and validation.  this plugin also uses Pillow for image manipulation and management.    
+django-easy-avatar uses jQuery for ajax file uploading and validation.  this plugin also uses Pillow for image manipulation and management.  By default the avatar photos are resized to be 100 X 100 while maintaining the correct aspect ratio.     
 
 Video Tutorials are available!
 
@@ -43,7 +43,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 5.  add (r'^avatar/', include('easy_avatar.urls')), to your urls.py file
 
-6.  in the template where you plan on using django-easy-avatar add {% load avatar_tags %} to the top of the template
+6.  in the template where you plan on using django-easy-avatar add {% load avatar_tags %} to the top of the template, also add jQuery library. 
 
 7.  to place the form in the page add the below
 (example)
