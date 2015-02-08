@@ -1,7 +1,7 @@
 django-easy-avatar
 ==================
         
-A super easy AJAX loading avatar for profile management.  django-easy-avatar is currently being used in production by Noob Media LLC for http://www.noobmovies.com
+A super easy AJAX file uploading app to easily store avatars for user profiles.  django-easy-avatar is currently being used in production by Noob Media LLC for http://www.noobmovies.com
 
 Example...
 http://www.findgamersonline.com/user/profile/1/
