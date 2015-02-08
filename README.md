@@ -26,8 +26,11 @@ http://django-easy-avatar.readthedocs.org/en/latest/
 2.  add easy_avatar to your installed apps
 
 3.  add the below paths to your settings.py file (make sure you point to the right locations 
+
 (example)
+
 FILE_SAVE_PATH = "/root/path/to/your/static/avatars" ## must give apache or whatever webserver you're using write access to this directory
+
 FILE_URL_PATH = "http://www.noobmovies.com/static/avatars/" ## your url where the uploaded image can be handled by your server
 
 4.  Add 'django.core.context_processors.request' to your TEMPLATE_CONTEXT_PROCESSORS in your settings.py file. 
