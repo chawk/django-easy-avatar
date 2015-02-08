@@ -46,7 +46,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
         {{ avatar.image_url }}  /* wrap this in an image tag */
 {% endif %}
 
-If you have any troubles with this setup you will most likely be running into a permissions problem when your app tries to write the file to the directory.  
+
+If you have any troubles with this setup you're most likely running into permissions problem when your app tries to save the uploaded images.  
 
 see this link for setting permissions to allow apache to create directories and files. 
 
@@ -54,4 +55,4 @@ http://askubuntu.com/questions/30629/how-can-i-recursively-change-the-permission
 
 
 
-**** there is a known problem with trying to add an easy_avatar via the admin console, I will be looking into this ****
+**** there is a known problem with trying to add an easy_avatar via the admin console, I am looking into this ****
