@@ -59,3 +59,6 @@ see this link for setting permissions to allow apache to create directories and 
 
 http://askubuntu.com/questions/30629/how-can-i-recursively-change-the-permissions-of-files-and-directories
 
+
+
+**** there is a known problem with trying to add an easy_avatar via the admin console, I will be looking into this ****
