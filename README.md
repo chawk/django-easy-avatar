@@ -4,7 +4,7 @@ django-easy-avatar
 A super easy AJAX loading avatar for profile management.  django-easy-avatar is currently being used in production by Noob Media LLC for http://www.noobmovies.com
 
 Example...
-http://www.noobmovies.com/user/profile/1/
+http://www.findgamersonline.com/user/profile/1/
 
 django-easy-avatar needs jQuery for ajax file uploading and validation.  this plugin also uses Pillow for image manipulation and management.    
 
